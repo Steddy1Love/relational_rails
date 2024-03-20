@@ -12,7 +12,7 @@ RSpec.describe "Manufacturer Index Page", type: :feature do
         ferrari = Manufacturer.create!(name: 'Ferrari', number_of_sub_manufacturers: 1 , favorite_manufacturer: false)
         rivian = Manufacturer.create!(name: 'Rivian', number_of_sub_manufacturers: 1, favorite_manufacturer: false)
   
-        visit "/manufacturer
+        visit "/manufacturer"
 
         expect(page).to have_content("Name: #{gm.name}")
         expect(page).to have_content("Name: #{ferrari.name}")
@@ -32,7 +32,13 @@ RSpec.describe "Manufacturer Index Page", type: :feature do
         ferrari = Manufacturer.create!(name: 'Ferrari', number_of_sub_manufacturers: 1 , favorite_manufacturer: false)
         rivian = Manufacturer.create!(name: 'Rivian', number_of_sub_manufacturers: 1, favorite_manufacturer: false)
 
+        visit "/manufacturer/#{manfacturer.id}"
 
+        expect(page).to have_content("Name: #{gm.name}")
+  
+        expect(page).to have_content("Number of sub manufacturers: #{gm.number_of_sub_manufacturers}")
+
+        expect(page).to have_content("Favorite manufacturer: #{gm.favorite_manufacturer}")
       end
       
     end
