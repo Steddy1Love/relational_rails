@@ -10,9 +10,9 @@ Rails.application.routes.draw do
 
   get "/", to: "welcome#index"
   get "/manufacturers", to: "manufacturers#index"
-  get "/manufacturers/new", to: "manufacturers#new"
-  post "/manufacturers", to: "manufacturers#create"
+  # get "/manufacturers/new", to: "manufacturers#new"
+  # post "/manufacturers", to: "manufacturers#create"
   get "/manufacturers/:id", to: "manufacturers#show"
-  patch "/manufacturers/:id", to: "manufacturers#update"
-  delete "/manufacturers/:id", to: "manufacturers#destroy"
+  # patch "/manufacturers/:id", to: "manufacturers#update"
+  # delete "/manufacturers/:id", to: "manufacturers#destroy"
 end
