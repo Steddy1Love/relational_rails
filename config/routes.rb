@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
 
-  get "/", to: "welcome#index"
-  get "/manufacturers", to: "manufacturers#index"
+  get '/', to: 'welcome#index'
+  get '/manufacturers', to: 'manufacturers#index'
   # get "/manufacturers/new", to: "manufacturers#new"
   # post "/manufacturers", to: "manufacturers#create"
-  get "/manufacturers/:id", to: "manufacturers#show"
+  get '/manufacturers/:id', to: 'manufacturers#show'
   # patch "/manufacturers/:id", to: "manufacturers#update"
   # delete "/manufacturers/:id", to: "manufacturers#destroy"
 end

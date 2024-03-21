@@ -19,7 +19,7 @@ class ManufacturersController < ApplicationController
     # end
 
     def show
-        @manfacturer = Manufacturer.find(params[:id])
+        @manufacturer = Manufacturer.find(params[:id])
     end
 
     # def edit
