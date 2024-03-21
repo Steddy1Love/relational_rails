@@ -1,0 +1,7 @@
+<h1>All Vehicles</h1>
+
+<% @vehicles.each do |car| %>
+ <p>Name: <%= car.name %></p>
+ <p>Pistons: <%= car.number_of_cylinders %></p>
+ <p>Favorite: <%= car.favorite_type %></p>
+<% end %>
