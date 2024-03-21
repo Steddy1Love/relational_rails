@@ -1,3 +1,3 @@
-class Vehicles < ApplicationRecord
-  belongs_to :manufacturers
+class Vehicle < ApplicationRecord
+  belongs_to :manufacturer
 end

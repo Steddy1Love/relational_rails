@@ -1,3 +1,5 @@
+require "rails_helper"
+
 RSpec.describe "Vehicle Index Page", type: :feature do
   # User Story 3, Child Index 
 
@@ -19,6 +21,8 @@ RSpec.describe "Vehicle Index Page", type: :feature do
       expect(page).to have_content("Name: #{ct4.name}")
       expect(page).to have_content("Favorite: #{ct4.favorite_type}")
       expect(page).to have_content("Pistons: #{ct4.number_of_cylinders}")
+      expect(page).to have_content("Favorite: #{r2.favorite_type}")
+      expect(page).to have_content("Pistons: #{r2.number_of_cylinders}")
     end
     
   end
