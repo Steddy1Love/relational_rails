@@ -1,4 +1,4 @@
-<h1>All vehicles per <%= "#{@vehicle.manufacturer_id}" %></h1>
+<h1>All vehicles for <%= "#{@manufacturer.name}" %></h1>
 
 <% @vehicles.each do |vehicle| %>
  <p>Name: <%= vehicle.name %></p>
