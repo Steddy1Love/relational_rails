@@ -8,6 +8,8 @@ RSpec.describe "Manufacturer Index Page", type: :feature do
   end
 
   describe "As a User when I visit '/manufacturers'"do
+    let(:this) {"#{@gm.name}"}
+    let(:that) {"#{@ferrari.name}"}
     
     it "Then I see the name of each manufacturer record in the system" do
       visit "/manufacturers"
@@ -45,12 +47,13 @@ RSpec.describe "Manufacturer Index Page", type: :feature do
       # And next to each of the records I see when it was created
 
     it "Then I see that records are orderd by most recently created first and see when it was created" do
-      let(:this) {"#{@gm.name}"}
-      let(:that) {"#{@ferrari.name}"}
-
       visit "/manufacturers"
-      
+      save_and_open_page
       expect(this).to appear_before(that)
     end  
+    # User Story 7, Parent Child Count
+    # As a visitor
+    # When I visit a parent's show page
+    # I see a count of the number of children associated with this parent
   end
 end

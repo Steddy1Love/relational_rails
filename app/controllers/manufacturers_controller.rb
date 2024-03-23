@@ -1,8 +1,10 @@
 class ManufacturersController < ApplicationController
-  attr_reader :manu_list
+  attr_reader :manu_list,
+              :manufacturer_list,
+              :ordered_list
 
     def index
-        @manufacturers = Manufacturer.all
+        @manufacturers = Manufacturer.order(created_at: :asc)
     end
 
     # def new
@@ -36,18 +38,4 @@ class ManufacturersController < ApplicationController
     #         favorite_manufacturer: params[:manufacturers][:favorite_manufacturer]
     #     })
     # end
-
-    def manufacturer_list
-      @manu_list = @manufacturers.each do |manufacturer| 
-        manu_name = manufacturer.name
-        sub_manufacturers = manufacturer.number_of_sub_manufacturers
-        favorite = manufacturer.favorite_manufacturer
-        created = manfacturer.created_at
-      end
-      
-    end
-
-    def ordered_list
-      @manu_list.sort_by!{|manufacturer| manfacturer. binding.pry}
-    end
 end
