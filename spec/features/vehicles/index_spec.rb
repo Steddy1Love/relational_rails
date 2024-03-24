@@ -39,9 +39,19 @@ RSpec.describe "Vehicle Index Page", type: :feature do
 
     it "Then I see the vehicles link at the top of the page" do
       visit "/vehicles/#{@r2.id}"
-      save_and_open_page
       click_on("All Vehicles")
       expect(page).to have_content("All Vehicles")
+    end
+
+    # User Story 9, Parent Index Link
+    # As a visitor
+    # When I visit any page on the site
+    # Then I see a link at the top of the page that takes me to the Parent Index
+
+    it "Then I see the manufacturers link at the top of the page" do
+      visit "/vehicles/#{@gto.id}"
+      click_on("All Manufacturers")
+      expect(page).to have_content("All Manufacturers")
     end
   end 
 end

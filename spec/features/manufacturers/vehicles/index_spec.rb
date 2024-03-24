@@ -38,4 +38,11 @@ RSpec.describe "Manufacturer Vehicle Index", type: :feature do
 
     expect(page).to have_content("All Vehicles")
   end
+
+  it "Then I see the manufacturers link at the top of the page" do
+    visit "/manufacturers/#{@ferrari.id}/vehicles"
+    click_on("All Manufacturers")
+
+    expect(page).to have_content("All Manufacturers")
+  end
 end
