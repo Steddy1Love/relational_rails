@@ -28,7 +28,14 @@ RSpec.describe "Manufacturer Vehicle Index", type: :feature do
   
   it 'Then I see a count of the number of vehicles associated with the manufacturer' do
     visit "/manufacturers/#{@gm.id}/vehicles"
-    save_and_open_page
+
     expect(page).to have_content("Number listed: #{@gm.vehicles.count}")
+  end
+
+  it "Then I see the vehicle link at the top of the page" do
+    visit "/manufacturers/#{@rivian.id}/vehicles"
+    click_on("All Vehicles")
+
+    expect(page).to have_content("All Vehicles")
   end
 end

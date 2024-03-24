@@ -32,25 +32,22 @@ RSpec.describe "Manufacturer Index Page", type: :feature do
 
       expect(page).to have_content("#{@gm.name}")
       expect(page).to_not have_content("Name: #{@rivian.name}")
-
       expect(page).to have_content("Number of sub manufacturers: #{@gm.number_of_sub_manufacturers}")
       expect(page).to have_content("Favorite manufacturer: #{@gm.favorite_manufacturer}")
       expect(page).to have_content("Created at: #{@gm.created_at}")
       expect(page).to have_content("Updated at: #{@gm.updated_at}")
     end
 
-      #User Story 6, Parent Index sorted by Most Recently Created 
-
-      # As a visitor
-      # When I visit the parent index,
-      # I see that records are ordered by most recently created first
-      # And next to each of the records I see when it was created
-
     it "Then I see that records are orderd by most recently created first and see when it was created" do
       visit "/manufacturers"
-      save_and_open_page
       expect(this).to appear_before(that)
     end  
-   
+ 
+    it "Then I see a link at the top of the page that takes me to the vehicles page" do
+      visit "/manufacturers"
+      click_on("All Vehicles")
+
+      expect(page).to have_content("All Vehicles")
+    end
   end
 end
