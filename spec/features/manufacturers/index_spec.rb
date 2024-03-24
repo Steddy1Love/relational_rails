@@ -51,9 +51,6 @@ RSpec.describe "Manufacturer Index Page", type: :feature do
       save_and_open_page
       expect(this).to appear_before(that)
     end  
-    # User Story 7, Parent Child Count
-    # As a visitor
-    # When I visit a parent's show page
-    # I see a count of the number of children associated with this parent
+   
   end
 end

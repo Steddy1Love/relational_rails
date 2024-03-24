@@ -13,7 +13,6 @@ RSpec.describe "Manufacturer Vehicle Index", type: :feature do
 
   it 'Then I see each vehicle that is associated with that manufacturer with each vehicles attributes' do
     visit "/manufacturers/#{@gm.id}/vehicles"
-    save_and_open_page
     
     expect(page).to have_content("Name: #{@ct4.name}")
     expect(page).to have_content("Favorite type: #{@ct4.favorite_type}")
@@ -25,5 +24,11 @@ RSpec.describe "Manufacturer Vehicle Index", type: :feature do
     expect(page).to have_content("Pistons?: #{@zl1.number_of_cylinders}")
     expect(page).to have_content("Created at: #{@zl1.created_at}")
     expect(page).to have_content("Updated at: #{@zl1.updated_at}")
+  end
+  
+  it 'Then I see a count of the number of vehicles associated with the manufacturer' do
+    visit "/manufacturers/#{@gm.id}/vehicles"
+    save_and_open_page
+    expect(page).to have_content("Number listed: #{@gm.vehicles.count}")
   end
 end

@@ -1,5 +1,5 @@
 <h1>All vehicles for <%= "#{@manufacturer.name}" %></h1>
-
+<h3>Number listed: <%= @count_cars %></h3>
 <% @vehicles.each do |vehicle| %>
  <p>Name: <%= vehicle.name %></p>
  <p>Pistons?: <%= vehicle.number_of_cylinders %></p>

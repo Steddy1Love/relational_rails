@@ -275,47 +275,20 @@
           null
         ]
       },
-      "/Users/steddy/Dev/Turing/Mod_2/Projects/relational_rails/app/controllers/manufacturers_controller.rb": {
+      "/Users/steddy/Dev/Turing/Mod_2/Projects/relational_rails/app/models/vehicle.rb": {
         "lines": [
           1,
           1,
-          null,
-          null,
-          null,
+          null
+        ]
+      },
+      "/Users/steddy/Dev/Turing/Mod_2/Projects/relational_rails/app/controllers/manufacturer_vehicles_controller.rb": {
+        "lines": [
+          1,
           1,
           2,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          1,
-          1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
+          2,
+          2,
           null,
           null
         ]
@@ -327,6 +300,6 @@
         ]
       }
     },
-    "timestamp": 1711236248
+    "timestamp": 1711240661
   }
 }
