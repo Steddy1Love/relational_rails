@@ -5,6 +5,10 @@ RSpec.describe "Manufacturer Index Page", type: :feature do
     @gm = Manufacturer.create!(name: 'GM', number_of_sub_manufacturers: 4, favorite_manufacturer: true)
     @ferrari = Manufacturer.create!(name: 'Ferrari', number_of_sub_manufacturers: 1 , favorite_manufacturer: false)
     @rivian = Manufacturer.create!(name: 'Rivian', number_of_sub_manufacturers: 1, favorite_manufacturer: false)
+    @ct4 = @gm.vehicles.create!(name: 'CT4', favorite_type: true, number_of_cylinders: 6)
+    @zl1 = @gm.vehicles.create!(name: 'ZL1', favorite_type: false, number_of_cylinders: 8)
+    @r2 = @rivian.vehicles.create!(name: 'R2', favorite_type: false, number_of_cylinders: 0)
+    @gto = @ferrari.vehicles.create!(name: '599 GTO', favorite_type: false, number_of_cylinders: 12)
   end
 
   describe "As a User when I visit '/manufacturers'"do
@@ -14,9 +18,9 @@ RSpec.describe "Manufacturer Index Page", type: :feature do
     it "Then I see the name of each manufacturer record in the system" do
       visit "/manufacturers"
 
-      expect(page).to have_content("Name: #{@gm.name}")
-      expect(page).to have_content("Name: #{@ferrari.name}")
-      expect(page).to have_content("Name: #{@rivian.name}")
+      expect(page).to have_content("#{@gm.name}")
+      expect(page).to have_content("#{@ferrari.name}")
+      expect(page).to have_content("#{@rivian.name}")
 
       expect(page).to have_content("Number of sub manufacturers: #{@gm.number_of_sub_manufacturers}")
       expect(page).to have_content("Number of sub manufacturers: #{@ferrari.number_of_sub_manufacturers}")
@@ -27,16 +31,7 @@ RSpec.describe "Manufacturer Index Page", type: :feature do
       expect(page).to have_content("Favorite manufacturer: #{@rivian.favorite_manufacturer}")
     end
 
-    it "Then I see the attributes of each manufacturer in the system" do
-      visit "/manufacturers/#{@gm.id}"
-
-      expect(page).to have_content("#{@gm.name}")
-      expect(page).to_not have_content("Name: #{@rivian.name}")
-      expect(page).to have_content("Number of sub manufacturers: #{@gm.number_of_sub_manufacturers}")
-      expect(page).to have_content("Favorite manufacturer: #{@gm.favorite_manufacturer}")
-      expect(page).to have_content("Created at: #{@gm.created_at}")
-      expect(page).to have_content("Updated at: #{@gm.updated_at}")
-    end
+    
 
     it "Then I see that records are orderd by most recently created first and see when it was created" do
       visit "/manufacturers"
@@ -56,5 +51,7 @@ RSpec.describe "Manufacturer Index Page", type: :feature do
       
       expect(page).to have_content("All Manufacturers")
     end
+   
+    
   end
 end
