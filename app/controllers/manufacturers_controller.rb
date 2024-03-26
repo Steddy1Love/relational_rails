@@ -10,8 +10,7 @@ class ManufacturersController < ApplicationController
       Manufacturer.create!(name: params[:name],
                         number_of_sub_manufacturers: params[:number_of_sub_manufacturers],
                         favorite_manufacturer: params[:favorite_manufacturer])
-
-      redirect_to '/manfacturers'
+      redirect_to '/manufacturers'
   end
 
   def show
