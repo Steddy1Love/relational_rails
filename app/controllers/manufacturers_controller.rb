@@ -3,20 +3,16 @@ class ManufacturersController < ApplicationController
     @manufacturers = Manufacturer.order(created_at: :asc)
   end
 
-  # def new
-  # end
+  def new
+  end
 
-  # def create
-  #     manufacturer = Manufacturer.new({
-  #         name: params[:name]
-  #         number_of_sub_manufacturers: params[:number_of_sub_manufacturers]
-  #         favorite_manufacturer: params[:favorite_manufacturer]
-  #     })
+  def create
+      Manufacturer.create!(name: params[:name],
+                        number_of_sub_manufacturers: params[:number_of_sub_manufacturers],
+                        favorite_manufacturer: params[:favorite_manufacturer])
 
-  #     manufacturer.save
-
-  #     redirect_to '/manfacturers'
-  # end
+      redirect_to '/manfacturers'
+  end
 
   def show
     @manufacturer = Manufacturer.find(params[:id])

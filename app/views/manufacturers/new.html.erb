@@ -1,0 +1,17 @@
+<h3><a href="/manufacturers/">All Manufacturers</a></h3>
+<h3><a href="/vehicles/">All Vehicles</a></h3>
+
+
+<%= form_with url: "/manufacturers", method: :post, data: { turbo: false } do |form| %>
+	<h3>Create a manufacturer:</h3>
+	<p>Input name and info</p>
+  <%= form.label :name %>
+  <%= form.text_field :name %><br>
+  <%= form.label :number_of_sub_manufacturers %>
+  <%= form.number_field :number_of_sub_manufacturers %><br>
+  <%= form.label :favorite_manufacturer %><br>
+  <%= form.radio_button :favorite_manufacturer, 'Yes' %> Yes<br>
+  <%= form.radio_button :favorite_manufacturer, 'No' %> No<br>
+  <p>Don't forget to hit submit!</p>
+	<%= form.submit :submit %> 
+<% end %>
